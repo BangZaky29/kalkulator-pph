@@ -381,8 +381,8 @@ function App() {
       <footer className="app-footer">
         <div className="container">
           <div className="footer-content">
-            <p>© 2025 Perhitungan PPh - Hitung Pajak Penghasilan</p>
-            <p className="footer-note">© 2025 Kalkulator PPh. All rights reserved.</p>
+            <p>Perhitungan PPh - Hitung Pajak Penghasilan</p>
+            <p className="footer-note">© 2025 nuansalegal.id. All rights reserved.</p>
           </div>
         </div>
       </footer>
