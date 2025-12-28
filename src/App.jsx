@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import LogoNuansaLegal from './assets/BKBlank_LogoNuansaLegal.png';
+import LogoNuansaLegal from './assets/NS_white_01.png';
 
 function App() {
   const [activeTab, setActiveTab] = useState('pph21');
