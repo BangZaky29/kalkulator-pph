@@ -382,7 +382,7 @@ function App() {
         <div className="container">
           <div className="footer-content">
             <p>Perhitungan PPh - Hitung Pajak Penghasilan</p>
-            <p className="footer-note">© 2025 nuansalegal.id. All rights reserved.</p>
+            <p className="footer-note">© 2025 Nuansa Legal.id. All rights reserved.</p>
           </div>
         </div>
       </footer>
