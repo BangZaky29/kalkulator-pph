@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './App.css';
-import LogoNuansaLegal from './assets/NS_white_01.png';
+import LogoNuansaLegal from './assets/LOGO-NUANSA-LEGAL.jpeg';
 
 function App() {
   const [activeTab, setActiveTab] = useState('pph21');
-  
+
   // PPh 21 States
   const [statusKawin, setStatusKawin] = useState('Tidak Kawin');
   const [tanggungan, setTanggungan] = useState('0');
@@ -18,19 +18,19 @@ function App() {
   const [bonus, setBonus] = useState('');
   const [penghasilanBruto, setPenghasilanBruto] = useState('');
   const [hasilPph21, setHasilPph21] = useState('');
-  
+
   // PPh 23 States
   const [kodeObjek23, setKodeObjek23] = useState('');
   const [penghasilanBruto23, setPenghasilanBruto23] = useState('');
   const [tarif23, setTarif23] = useState('2');
   const [hasilPph23, setHasilPph23] = useState('');
-  
+
   // PPh 4(2) States
   const [kodeObjek42, setKodeObjek42] = useState('');
   const [penghasilanBruto42, setPenghasilanBruto42] = useState('');
   const [tarif42, setTarif42] = useState('10');
   const [hasilPph42, setHasilPph42] = useState('');
-  
+
   // PPN States
   const [dpp, setDpp] = useState('');
   const [tarifPpn, setTarifPpn] = useState('11');
@@ -38,21 +38,21 @@ function App() {
   const [hargaSetelahPpn, setHargaSetelahPpn] = useState('');
 
   const hitungPph21 = () => {
-    const total = 
-      parseFloat(gaji || 0) + 
-      parseFloat(tunjanganPph || 0) + 
-      parseFloat(tunjanganLainnya || 0) + 
-      parseFloat(honorarium || 0) + 
-      parseFloat(premiAsuransi || 0) + 
-      parseFloat(natura || 0) + 
-      parseFloat(bonus || 0) + 
+    const total =
+      parseFloat(gaji || 0) +
+      parseFloat(tunjanganPph || 0) +
+      parseFloat(tunjanganLainnya || 0) +
+      parseFloat(honorarium || 0) +
+      parseFloat(premiAsuransi || 0) +
+      parseFloat(natura || 0) +
+      parseFloat(bonus || 0) +
       parseFloat(penghasilanBruto || 0);
-    
+
     // Simplified calculation - in real app, implement proper PTKP and tax brackets
     const ptkp = statusKawin === 'Tidak Kawin' ? 54000000 : 58500000;
     const pkp = Math.max(0, (total * 12) - ptkp);
     const pph = pkp * 0.05 / 12; // Simplified 5% rate
-    
+
     setHasilPph21(`Rp ${pph.toLocaleString('id-ID')}`);
   };
 
@@ -75,7 +75,7 @@ function App() {
     const rate = parseFloat(tarifPpn || 0) / 100;
     const ppnValue = dppValue * rate;
     const total = dppValue + ppnValue;
-    
+
     setPpn(`Rp ${ppnValue.toLocaleString('id-ID')}`);
     setHargaSetelahPpn(`Rp ${total.toLocaleString('id-ID')}`);
   };
@@ -98,25 +98,25 @@ function App() {
 
       <main className="main-content">
         <div className="tabs">
-          <button 
+          <button
             className={`tab ${activeTab === 'pph21' ? 'active' : ''}`}
             onClick={() => setActiveTab('pph21')}
           >
             PPH21
           </button>
-          <button 
+          <button
             className={`tab ${activeTab === 'pph23' ? 'active' : ''}`}
             onClick={() => setActiveTab('pph23')}
           >
             PPH23
           </button>
-          <button 
+          <button
             className={`tab ${activeTab === 'pph42' ? 'active' : ''}`}
             onClick={() => setActiveTab('pph42')}
           >
             PPH 4 Ayat (2)
           </button>
-          <button 
+          <button
             className={`tab ${activeTab === 'ppn' ? 'active' : ''}`}
             onClick={() => setActiveTab('ppn')}
           >
@@ -128,7 +128,7 @@ function App() {
           {activeTab === 'pph21' && (
             <div className="calculator-content">
               <h2>Kalkulator PPh21</h2>
-              
+
               <div className="form-row">
                 <div className="form-group">
                   <label>Status Kawin:</label>
@@ -138,7 +138,7 @@ function App() {
                     <option>Kawin Istri Bekerja</option>
                   </select>
                 </div>
-                
+
                 <div className="form-group">
                   <label>Tanggungan:</label>
                   <select value={tanggungan} onChange={(e) => setTanggungan(e.target.value)}>
@@ -161,9 +161,9 @@ function App() {
 
               <div className="form-group">
                 <label>Gaji/Pensiun:</label>
-                <input 
-                  type="number" 
-                  value={gaji} 
+                <input
+                  type="number"
+                  value={gaji}
                   onChange={(e) => setGaji(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -171,9 +171,9 @@ function App() {
 
               <div className="form-group">
                 <label>Tunjangan PPh:</label>
-                <input 
-                  type="number" 
-                  value={tunjanganPph} 
+                <input
+                  type="number"
+                  value={tunjanganPph}
                   onChange={(e) => setTunjanganPph(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -181,9 +181,9 @@ function App() {
 
               <div className="form-group">
                 <label>Tunjangan Lainnya:</label>
-                <input 
-                  type="number" 
-                  value={tunjanganLainnya} 
+                <input
+                  type="number"
+                  value={tunjanganLainnya}
                   onChange={(e) => setTunjanganLainnya(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -191,9 +191,9 @@ function App() {
 
               <div className="form-group">
                 <label>Honorarium:</label>
-                <input 
-                  type="number" 
-                  value={honorarium} 
+                <input
+                  type="number"
+                  value={honorarium}
                   onChange={(e) => setHonorarium(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -201,9 +201,9 @@ function App() {
 
               <div className="form-group">
                 <label>Premi Asuransi:</label>
-                <input 
-                  type="number" 
-                  value={premiAsuransi} 
+                <input
+                  type="number"
+                  value={premiAsuransi}
                   onChange={(e) => setPremiAsuransi(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -211,9 +211,9 @@ function App() {
 
               <div className="form-group">
                 <label>Natura:</label>
-                <input 
-                  type="number" 
-                  value={natura} 
+                <input
+                  type="number"
+                  value={natura}
                   onChange={(e) => setNatura(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -221,9 +221,9 @@ function App() {
 
               <div className="form-group">
                 <label>Bonus/THR:</label>
-                <input 
-                  type="number" 
-                  value={bonus} 
+                <input
+                  type="number"
+                  value={bonus}
                   onChange={(e) => setBonus(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -231,9 +231,9 @@ function App() {
 
               <div className="form-group">
                 <label>Penghasilan Bruto:</label>
-                <input 
-                  type="number" 
-                  value={penghasilanBruto} 
+                <input
+                  type="number"
+                  value={penghasilanBruto}
                   onChange={(e) => setPenghasilanBruto(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -253,7 +253,7 @@ function App() {
           {activeTab === 'pph23' && (
             <div className="calculator-content">
               <h2>PPH23</h2>
-              
+
               <div className="form-group">
                 <label>Kode Objek Pajak</label>
                 <select value={kodeObjek23} onChange={(e) => setKodeObjek23(e.target.value)}>
@@ -268,9 +268,9 @@ function App() {
 
               <div className="form-group">
                 <label>Penghasilan Bruto (Rp)</label>
-                <input 
-                  type="number" 
-                  value={penghasilanBruto23} 
+                <input
+                  type="number"
+                  value={penghasilanBruto23}
                   onChange={(e) => setPenghasilanBruto23(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -278,9 +278,9 @@ function App() {
 
               <div className="form-group">
                 <label>Tarif (%)</label>
-                <input 
-                  type="number" 
-                  value={tarif23} 
+                <input
+                  type="number"
+                  value={tarif23}
                   onChange={(e) => setTarif23(e.target.value)}
                 />
               </div>
@@ -299,7 +299,7 @@ function App() {
           {activeTab === 'pph42' && (
             <div className="calculator-content">
               <h2>PPh 4(2)</h2>
-              
+
               <div className="form-group">
                 <label>Kode Objek Pajak</label>
                 <select value={kodeObjek42} onChange={(e) => setKodeObjek42(e.target.value)}>
@@ -313,9 +313,9 @@ function App() {
 
               <div className="form-group">
                 <label>Penghasilan Bruto (Rp)</label>
-                <input 
-                  type="number" 
-                  value={penghasilanBruto42} 
+                <input
+                  type="number"
+                  value={penghasilanBruto42}
                   onChange={(e) => setPenghasilanBruto42(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -323,9 +323,9 @@ function App() {
 
               <div className="form-group">
                 <label>Tarif (%)</label>
-                <input 
-                  type="number" 
-                  value={tarif42} 
+                <input
+                  type="number"
+                  value={tarif42}
                   onChange={(e) => setTarif42(e.target.value)}
                 />
               </div>
@@ -344,12 +344,12 @@ function App() {
           {activeTab === 'ppn' && (
             <div className="calculator-content">
               <h2>PPN</h2>
-              
+
               <div className="form-group">
                 <label>DPP (Dasar Pengenaan Pajak) (Rp)</label>
-                <input 
-                  type="number" 
-                  value={dpp} 
+                <input
+                  type="number"
+                  value={dpp}
                   onChange={(e) => setDpp(e.target.value)}
                   placeholder="Masukkan jumlah"
                 />
@@ -357,9 +357,9 @@ function App() {
 
               <div className="form-group">
                 <label>Tarif (%)</label>
-                <input 
-                  type="number" 
-                  value={tarifPpn} 
+                <input
+                  type="number"
+                  value={tarifPpn}
                   onChange={(e) => setTarifPpn(e.target.value)}
                 />
               </div>
