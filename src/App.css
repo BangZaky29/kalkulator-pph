@@ -5,13 +5,11 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  background: var(--gradient-secondary);
+  background: var(--yellow-50);
 }
 
 .app {
@@ -118,9 +116,10 @@ body {
 
 .tab.active {
   background: var(--gradient-primary);
-  color: white;
-  box-shadow: 0 2px 6px rgba(74, 124, 89, 0.25);
-  border-left-color: #fff;
+  color: var(--navy-700);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(253, 208, 37, 0.45);
+  border-left-color: var(--navy-700);
 }
 
 /* Calculator Container */
@@ -191,23 +190,25 @@ body {
 .btn-calculate {
   width: 100%;
   padding: 13px 16px;
-  background: var(--gradient-primary);
-  color: white;
+  background: var(--navy-700);
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   margin-top: 25px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.35);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-family: 'Sen', 'Inter', sans-serif;
 }
 
 .btn-calculate:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+  background: var(--navy-800);
+  box-shadow: 0 6px 18px rgba(30, 58, 138, 0.45);
 }
 
 .btn-calculate:active {
@@ -219,7 +220,9 @@ body {
   margin-top: 35px;
   padding: 22px;
   border-radius: 10px;
-  border-left: 4px solid var(--blue-600);
+  background: var(--yellow-50);
+  border-left: 4px solid var(--yellow-primary);
+  border-top: 1px solid var(--yellow-200);
 }
 
 .hasil h3 {
@@ -253,26 +256,26 @@ body {
 
 /* === FOOTER === */
 .app-footer {
-  background: var(--gradient-primary);
+  background: var(--navy-700);
   margin-top: auto;
   padding: 1.5rem 0;
 }
 
 .footer-content {
   text-align: center;
-  color: var(--text-dark);
+  color: #fff;
 }
 
 .footer-content p {
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
+  color: #fff;
 }
 
 .footer-content .footer-note {
   font-size: 0.75rem;
-  color: var(--text-light);
   margin-top: 0.25rem;
-  color: var(--gray-600);
+  color: var(--yellow-200);
 }
 
 /* Responsive */
